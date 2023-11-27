@@ -1,0 +1,26 @@
+<p-toast position="top-right" key="msg"></p-toast>
+<br>
+<br>
+<!-- Login Form -->
+<!-- Article Title -->
+<div class="mb-3 input-group">
+  <span class="input-group-text"><i class="bi bi-book"></i></span>
+  <input type="text" class="form-control" placeholder="Article Title" name="articleTitle" [(ngModel)]="articleTitle" required>
+</div>
+
+<!-- Article Description -->
+<div class="mb-3 input-group">
+  <span class="input-group-text"><i class="bi bi-align-left"></i></span>
+  <textarea class="form-control" placeholder="Article Description" name="articleDescription" [(ngModel)]="articleDescription" required></textarea>
+</div>
+
+<!-- Article Picture -->
+<div class="mb-3 input-group">
+  <span class="input-group-text"><i class="bi bi-image"></i></span>
+  <input type="text" class="form-control" name="articlePicture" placeholder="Image URI" accept="image/*"  [(ngModel)]="articlePicture">
+</div>
+
+<!-- Submit Article Button -->
+<button type="submit" class="btn btn-success" (click)="submitArticle()">Submit Article</button>
+
+<router-outlet></router-outlet>

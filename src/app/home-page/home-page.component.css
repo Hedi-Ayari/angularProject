@@ -1,0 +1,15 @@
+/* home-page.component.css */
+div {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  p {
+    color: #777;
+  }
+  

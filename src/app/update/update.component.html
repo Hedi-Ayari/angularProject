@@ -1,0 +1,49 @@
+<!-- update.component.html -->
+<div class="container mt-4">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ article.Title }}</td>
+          <td>{{ article.Description }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteArticle(article._id)">Delete</button>
+            <button class="btn btn-primary" (click)="editArticle(article)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Update Form -->
+    <div *ngIf="selectedArticle">
+      <h3 class="mt-4">Edit Article</h3>
+      <form (submit)="updateArticle()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title:</label>
+          <input type="text" class="form-control" id="title" [(ngModel)]="selectedArticle.Title" name="title" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="description" class="form-label">Description:</label>
+          <textarea class="form-control" id="description" [(ngModel)]="selectedArticle.Description" name="description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URI:</label>
+            <input type="text" class="form-control" id="image" [(ngModel)]="selectedArticle.image" name="image">
+          </div>
+        <!-- Add more input fields for other properties as needed -->
+  
+        <button type="submit" class="btn btn-success">Update</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelUpdate()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

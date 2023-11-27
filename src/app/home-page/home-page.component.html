@@ -1,0 +1,12 @@
+<div class="container">
+    <div *ngFor="let article of articles" class="card" style="width: 18rem;">
+      <!-- Assuming you have an 'image' property in your article object -->
+      <img class="card-img-top" style="height: 200px;" src="{{ article.image }}" alt="Article Image">
+      <div class="card-body">
+        <h5 class="card-title">{{ article.Title }}</h5>
+        <p class="card-text">{{ article.Description }}</p>
+        <!-- You can add more properties and details here as needed -->
+      </div>
+    </div>
+  </div>
+  

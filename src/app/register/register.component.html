@@ -1,0 +1,35 @@
+<!-- register.component.html -->
+<p-toast position="top-right" key="msg"></p-toast>
+<div class="grid p-fluid login">
+  <br><br>
+  <div class="info">
+    <div class="col-12 md:col-4">
+      <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+        <div class="loginInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText placeholder="Name" name="name" ngModel required>
+        </div>
+        <div class="loginInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input type="email" pInputText placeholder="Email Address" name="email" ngModel required>
+        </div>
+        <div class="passwordInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+          <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true"></p-password>
+        </div>
+        <div class="addressInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+          <input type="text" pInputText placeholder="Address" name="address" ngModel required>
+        </div>
+       
+        <br><br>
+        <button pButton pRipple type="submit" label="Register" class="p-button-raised p-button-success"></button>
+      </form>
+    </div>
+  </div>
+  <button pButton pRipple type="button" label="Login" class="p-button-raised custom-blue-button"
+    routerLink="../Login"></button>
+  <br>
+  <a routerLink="../" class="p-button-raised p-button-success goBackHome">Go Back Home </a>
+</div>
+<router-outlet></router-outlet>
